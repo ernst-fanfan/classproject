@@ -46,7 +46,7 @@ import com.google.gson.Gson;
 public class MainActivity extends Activity {
 
     public static final String EXTRA_INFO = "com.appdevteam.myapplication.INFO";
-    private static final String TAG = "GoogleActivity";
+    private static final String TAG = "MainActivity";
     private static final int RC_SIGN_IN = 9001;
 
     // [START declare_auth]
