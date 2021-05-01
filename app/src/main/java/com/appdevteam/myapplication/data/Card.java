@@ -7,20 +7,19 @@ import java.util.Map;
 
 public class Card {
     public String uid;
-    public String author;
     public String question;
     public String answer;
-    public Map<String, Boolean> card = new HashMap<>();
+    public Boolean known;
 
     public Card() {
         // Default constructor required for calls to DataSnapshot.getValue(SetOfCards.class)
     }
 
-    public Card(String uid, String author, String question, String answer) {
+    public Card(String uid, String question, String answer) {
         this.uid = uid;
-        this.author = author;
         this.question = question;
         this.answer = answer;
+        this.known = false;
     }
 
     public void setQuestion(String question){
@@ -31,14 +30,22 @@ public class Card {
         this.answer = answer;
     }
 
+    public void toggleKnown(){
+        if (this.known) {
+            this.known = false;
+        }else{
+            this.known = true;
+        }
+    }
+
     // [START post_to_map]
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
-        result.put("author", author);
         result.put("question", question);
         result.put("answer", answer);
+        result.put("known", known);
 
         return result;
     }
