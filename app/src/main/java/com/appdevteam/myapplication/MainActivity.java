@@ -152,7 +152,7 @@ public class MainActivity extends Activity {
         if (user != null){
             Gson gson = new Gson();
             cUser = new User(user);
-            DataTest.testUpdateUI(cUser);
+            cUser = DataTest.testUpdateUI(cUser);
             String uInfo = gson.toJson(cUser).toString();
             Intent toApp = new Intent(this, QMainActivity.class);
             toApp.putExtra("uInfo", uInfo);
