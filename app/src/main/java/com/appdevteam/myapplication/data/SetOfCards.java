@@ -2,10 +2,11 @@ package com.appdevteam.myapplication.data;
 
 import com.google.firebase.database.Exclude;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SetOfCards {
+public class SetOfCards{
     public String uid;
     public String title;
     public String category;
@@ -16,11 +17,11 @@ public class SetOfCards {
         // Default constructor required for calls to DataSnapshot.getValue(SetOfCards.class)
     }
 
-    public SetOfCards(String uid, String title, String category, Card [] cards) {
+    public SetOfCards(String uid, String title, String category) {
         this.uid = uid;
         this.title = title;
         this.category = category;
-        this.cards = cards;
+        this.cards = new Card[0];
     }
 
     public void setTitle(String title){
