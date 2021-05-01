@@ -7,20 +7,17 @@ import java.util.Map;
 
 public class SetOfCards {
     public String uid;
-    public String author;
     public String title;
     public String category;
-    public Card [] cards;
     public int numberOfCards = 0;
-    public Map<String, Boolean> card = new HashMap<>();
+    public Card [] cards;
 
     public SetOfCards() {
         // Default constructor required for calls to DataSnapshot.getValue(SetOfCards.class)
     }
 
-    public SetOfCards(String uid, String author, String title, String category, Card [] cards) {
+    public SetOfCards(String uid, String title, String category, Card [] cards) {
         this.uid = uid;
-        this.author = author;
         this.title = title;
         this.category = category;
         this.cards = cards;
@@ -43,11 +40,10 @@ public class SetOfCards {
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
-        result.put("author", author);
         result.put("title", title);
         result.put("category", category);
-        result.put("cards", cards);
         result.put("numberOfCards", numberOfCards);
+        result.put("cards", cards);
 
         return result;
     }
