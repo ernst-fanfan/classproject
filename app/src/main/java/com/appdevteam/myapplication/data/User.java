@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class User implements Serializable {
+public class User{
     private String userId;
     private String userName;
     private String userEmail;
@@ -20,7 +20,7 @@ public class User implements Serializable {
         this.library = new Library();
     }
 
-    public String userId() {
+    public String getUserId() {
         return userId;
     }
 
@@ -32,11 +32,11 @@ public class User implements Serializable {
         return userEmail;
     }
 
-    public Library getUserCards() {
+    public Library getLibrary() {
         return library;
     }
 
-    public void setUserCards(Library library){
+    public void setLibrary(Library library){
         this.library = library;
     }
 
