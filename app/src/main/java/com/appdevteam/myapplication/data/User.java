@@ -1,8 +1,13 @@
 package com.appdevteam.myapplication.data;
 
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.Exclude;
 
-public class User {
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+public class User implements Serializable {
     private String userId;
     private String userName;
     private String userEmail;
@@ -33,5 +38,16 @@ public class User {
 
     public void setUserCards(Library library){
         this.library = library;
+    }
+
+    // [START post_to_map]
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("userId", userId);
+        result.put("userName", userName);
+        result.put("userEmail", userEmail);
+
+        return result;
     }
 }
