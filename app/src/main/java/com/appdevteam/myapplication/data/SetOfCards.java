@@ -36,6 +36,10 @@ public class SetOfCards{
         this.cards = cards;
     }
 
+    public Card[] getCards(){
+        return cards;
+    }
+
     // [START post_to_map]
     @Exclude
     public Map<String, Object> toMap() {
@@ -44,7 +48,6 @@ public class SetOfCards{
         result.put("title", title);
         result.put("category", category);
         result.put("numberOfCards", numberOfCards);
-        result.put("cards", cards);
 
         return result;
     }

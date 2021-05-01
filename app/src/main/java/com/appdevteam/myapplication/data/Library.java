@@ -10,9 +10,9 @@ import java.util.Map;
 // [START post_class]
 @IgnoreExtraProperties
 public class Library {
-    public String uid;
-    public int numberOfSets = 0;
-    public SetOfCards [] setOfCards;
+    private String uid;
+    private int numberOfSets = 0;
+    private SetOfCards [] setOfCards;
 
 
     public Library() {
@@ -22,6 +22,10 @@ public class Library {
     public Library(String uid, SetOfCards [] setOfCards) {
         this.uid = uid;
         this.setOfCards = setOfCards;
+    }
+
+    public SetOfCards[] getSetOfCards() {
+        return setOfCards;
     }
 
     // [START post_to_map]
