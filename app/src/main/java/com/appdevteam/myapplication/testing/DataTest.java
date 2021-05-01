@@ -13,12 +13,21 @@ import com.google.gson.Gson;
 
 public class DataTest {
 
-    public static void testOnCreate(Activity sourceActivity, TextView test){
+    public static void testOnCreate(Activity sourceActivity, TextView test0, TextView test1, TextView test2){
         Gson gson = new Gson();
         Intent info = sourceActivity.getIntent();
         User cUser = gson.fromJson(info.getStringExtra("uInfo"), User.class);
-        test = sourceActivity.findViewById(R.id.textView);
-        test.setText(cUser.toMap().toString());
+        test0 = sourceActivity.findViewById(R.id.textView0);
+        test1 = sourceActivity.findViewById(R.id.textView1);
+        test2 = sourceActivity.findViewById(R.id.textView2);
+        test0.setText(cUser.toMap().toString());
+        test1.setText(cUser.getLibrary().toMap().toString());
+        SetOfCards [] sets = cUser.getLibrary().getSetOfCards();
+        Sting 
+        for (SetOfCards c : sets){
+
+        }
+        test2.setText(.toString());
     }
 
     public static User testUpdateUI(User cUser){
