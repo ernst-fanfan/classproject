@@ -9,19 +9,16 @@ import java.util.Map;
 // [START post_class]
 @IgnoreExtraProperties
 public class Library {
-
-    public String lid;
     public String uid;
-    public SetOfCards [] setOfCards;
     public int numberOfSets = 0;
-    public Map<String, Boolean> sets = new HashMap<>();
+    public SetOfCards [] setOfCards;
+
 
     public Library() {
         // Default constructor required for calls to DataSnapshot.getValue(Library.class)
     }
 
-    public Library(String lid, String uid, SetOfCards [] setOfCards) {
-        this.lid = lid;
+    public Library(String uid, SetOfCards [] setOfCards) {
         this.uid = uid;
         this.setOfCards = setOfCards;
     }
@@ -30,11 +27,8 @@ public class Library {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("lid", lid);
         result.put("uid", uid);
-        result.put("set", setOfCards);
         result.put("numberOfSets", numberOfSets);
-        result.put("sets", sets);
 
         return result;
     }
