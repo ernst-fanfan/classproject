@@ -151,9 +151,8 @@ public class MainActivity extends Activity {
         if (user != null){
             Gson gson = new Gson();
             cUser = new User(user);
-            String uInfo = gson.toJson(cUser);
             Intent toApp = new Intent(this, QMainActivity.class);
-            toApp.putExtra(EXTRA_INFO, uInfo);
+//            toApp.putExtra("cUser", cUser);
             startActivity(toApp);
         }
     }
